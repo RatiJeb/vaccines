@@ -1,0 +1,42 @@
+<div class="row">
+  <p id="notice"><%= notice %></p>
+
+  <div class="col">
+    <%= link_to 'New Vaccine Item', new_admin_vaccine_item_path, class: 'btn btn-success' %>
+  </div>
+</div>
+
+<br />
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h1><%= I18n.t('admin.vaccine_items.list.header') %></h1>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><%= I18n.t('admin.vaccine_items.list.name') %></th>
+              <th><%= I18n.t('admin.vaccine_items.list.active') %></th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @vaccine_items.each do |vaccine_item| %>
+              <tr>
+                <td class="align-middle"><%= vaccine_item.name %></span></td>
+                <td class="align-middle"><%= vaccine_item.active %></td>
+                <td class="align-middle"><%= link_to 'Edit', edit_admin_vaccine_item_path(vaccine_item) %></td>
+                <td class="align-middle"><%= link_to 'Destroy', [:admin, vaccine_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <%== pagy_bootstrap_nav(@pagy)%>
+      </div>
+    </div>
+  </div>
+</div>

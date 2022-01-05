@@ -44,3 +44,12 @@ en:
         super_admin: 'IsSuperAdmin'
         created_at: 'CreatedAt'
         updated_at: 'UpdatedAt'
+    vaccine_items:
+      notices:
+        created: 'Vaccine Item was successfully created.'
+        updated: 'Vaccine Item was successfully updated.'
+        deleted: 'Vaccine Item was successfully destroyed.'
+      list:
+        header: 'Vaccine Items'
+        name: 'Name'
+        active: 'IsActive'

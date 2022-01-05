@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "main#index"
     resources :users
+    resources :vaccine_items
   end
 end
