@@ -52,4 +52,27 @@ en:
       list:
         header: 'Vaccine Items'
         name: 'Name'
+        description: 'Description'
         active: 'IsActive'
+    booking:
+      header: 'Booking'
+      vaccine_name: 'Vaccine Name'
+      guid: 'Guid'
+      pin: 'Pin'
+      step: 'Step'
+      created_at: 'Created at'
+      ip_address: 'IP'
+      browser_name: 'Browser'
+      os_name: 'Operating System'
+    panel:
+      header: 'Admin Panel'
+      users: 'Total Users -'
+      bookings: 'Total Bookings -'
+      vaccines: 'Total Vaccines -'
+
+  web:
+    main:
+      header: 'Online Booking'
+      seats: "Seats: %{quantity}"
+      register_text: 'Register'
+      step0_submit: 'Next'

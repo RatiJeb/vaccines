@@ -57,11 +57,11 @@ module Admin
     end
 
     def create_vaccine_item_params
-      params.require(:vaccine_item).permit(:name, :active)
+      params.require(:vaccine_item).permit(:name, :description, :active)
     end
 
     def update_vaccine_item_params
-      params.require(:vaccine_item).permit(:id, :name, :active)
+      params.require(:vaccine_item).permit(:id, :name, :description, :active)
     end
   end
 end

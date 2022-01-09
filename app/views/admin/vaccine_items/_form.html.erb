@@ -1,5 +1,6 @@
 <%= simple_form_for [:admin, vaccine_item] do |f| %>
   <%= f.input :name %>
+  <%= f.input :description %>
   <%= f.input :active %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>

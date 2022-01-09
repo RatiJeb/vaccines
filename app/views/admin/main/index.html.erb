@@ -1,3 +1,30 @@
-Admin panel here
-
-<%= button_to "logout", destroy_user_session_path, method: :delete %>
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h1><%= I18n.t('admin.panel.header') %></h1>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <%= I18n.t('admin.panel.users') %>
+              <%= @users %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <%= I18n.t('admin.panel.vaccines') %>
+              <%= @vaccine_items %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <%= I18n.t('admin.panel.bookings') %>
+              <%= @bookings %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= button_to "logout", destroy_user_session_path, class: "btn btn-dark", method: :delete %>
