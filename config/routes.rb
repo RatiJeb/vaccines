@@ -7,10 +7,11 @@ Rails.application.routes.draw do
     resources :users
     resources :vaccine_items
     resources :bookings
+    resources :patients
   end
 
   root to: "main#index"
 
-  match 'booking/:vaccine', to: 'main#current_step', via: :get, as: :new_booking
+  match 'booking/:vaccine', to: 'main#current_step', via: :get, as: :current_step
   match 'next_step', to: 'main#next_step', via: :post
 end

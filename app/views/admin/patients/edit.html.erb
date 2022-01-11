@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title"><strong><%= 'Edit Patient' %></strong></h5>
+        <br />
+        <%= simple_form_for [:admin, @patient] do |f| %>
+          <%= f.input :first_name, disabled: true %>
+          <%= f.input :last_name, disabled: true %>
+          <%= f.input :birth_date, disabled: true %>
+          <%= f.input :pin, disabled: true %>
+          <%= f.input :non_resident, disabled: true %>
+          <%= f.input :mobile_phone %>
+          <%= f.input :email, disabled: true %>
+          <%= f.submit I18n.t('admin.patient.update_button', class: 'btn btn-success') %>
+        <% end %>
+      </div>
+    <%= link_to 'Back', admin_patients_path %>
+  </div>
+</div>

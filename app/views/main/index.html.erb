@@ -8,7 +8,7 @@
         <div class="card-body">
           <h5 class="card-title"><strong><%= item.name %></strong><h5>
           <p class="card-text"><%= item.description %></p>
-          <%= link_to I18n.t('web.main.register_text'), new_booking_path(vaccine_pathname(item)), class: 'btn btn-primary' %>
+          <%= link_to I18n.t('web.main.register_text'), current_step_path(vaccine_pathname(item)), class: 'btn btn-primary' %>
         </div>
       </div>
       <div class="card-footer">
