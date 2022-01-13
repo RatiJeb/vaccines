@@ -83,6 +83,22 @@ en:
       users: 'Total Users -'
       bookings: 'Total Bookings -'
       vaccines: 'Total Vaccines -'
+    slots:
+      errors:
+        duplicate_slot_error: 'Duplicate or incorrect start-end date slot'
+      list:
+        header: 'Slots'
+        business_unit_name: 'BusinessUnitName'
+        duration: 'Duration'
+        start_date: 'StartDate'
+        end_date: 'EndDate'
+        active: 'IsActive'
+        created_at: 'CreatedAt'
+        updated_at: 'UpdatedAt'
+      notices:
+        created: 'Slot was successfully created.'
+        updated: 'Slot was successfully updated.'
+        deleted: 'Slot was successfully destroyed.'
 
   web:
     main:

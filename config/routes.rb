@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :vaccine_items
     resources :bookings
     resources :patients
+    resources :business_unit_slots
   end
 
   root to: "main#index"
