@@ -99,6 +99,53 @@ en:
         created: 'Slot was successfully created.'
         updated: 'Slot was successfully updated.'
         deleted: 'Slot was successfully destroyed.'
+    business_units:
+      notices:
+        created: 'Business Unit was successfully created.'
+        updated: 'Business Unit was successfully updated.'
+        deleted: 'Business Unit was successfully destroyed.'
+      list:
+        header: 'Business Units'
+        country: 'Country'
+        city: 'City'
+        district: 'District'
+        name: 'Name'
+        code: 'Code'
+        active: 'Active'
+        created_at: 'Created_at'
+        updated_at: 'Updated_at'
+    countries:
+      notices:
+        created: 'Country was successfully created.'
+        updated: 'Country was successfully updated.'
+        deleted: 'Country was successfully destroyed.'
+      list:
+        header: 'Countries'
+        name: 'Name'
+        code: 'Code'
+        active: 'Active'
+    cities:
+      notices:
+        created: 'City was successfully created.'
+        updated: 'City was successfully updated.'
+        deleted: 'City was successfully destroyed.'
+      list:
+        header: 'Cities'
+        country: 'Country'
+        name: 'Name'
+        code: 'Code'
+        active: 'Active'
+    districts:
+      notices:
+        created: 'District was successfully created.'
+        updated: 'District was successfully updated.'
+        deleted: 'District was successfully destroyed.'
+      list:
+        header: 'Districts'
+        city: 'City'
+        name: 'Name'
+        code: 'Code'
+        active: 'Active'
 
   web:
     main:

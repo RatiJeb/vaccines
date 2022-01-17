@@ -1,0 +1,21 @@
+<%= simple_form_for [:admin, business_unit] do |f| %>
+  <div data-controller="locations">
+    <%= f.collection_select :country_id, @countries, :id, :name, { include_blank: 'Select Country' },
+                              class: 'form-select',
+                              data: {
+                                action: "change->locations#fetchCities",
+                                locations_target: 'country'} %>
+    <%= f.collection_select :city_id, @cities, :id, :name, { include_blank: 'Select City' },
+                              class: 'form-select',
+                              data: {
+                                action: "change->locations#fetchDistricts",
+                                locations_target: 'cities'} %>
+    <%= f.collection_select :district_id, @districts, :id, :name, {include_blank: 'Select District' },
+                              class: 'form-select',
+                              data: { locations_target: 'districts'} %>
+  </div>
+  <%= f.input :name %>
+  <%= f.input :code %>
+  <%= f.input :active %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
