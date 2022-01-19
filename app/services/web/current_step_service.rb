@@ -2,18 +2,18 @@ module Web
   class CurrentStepService
     include Interactor
 
-    STEP0 = 0
-    STEP1 = 1
-    STEP2 = 2
-
     before :check_vaccine
+
+    before do
+      context._step = Web::StepsWrapper.call(booking: context.booking, params: context.params)
+    end
 
     def call
       prepare_current_step
 
       create_booking! if context.booking.blank?
 
-      fetch_current_step
+      fetch_render_step
     end
 
     private
@@ -36,6 +36,7 @@ module Web
     
     def prepare_current_step
       # TODO: refactor ond step2
+      
       context.record = context.booking&.patient || Patient.new
       
       context.current_vaccine = context.booking&.vaccine || context.selected_vaccine
@@ -50,17 +51,8 @@ module Web
       VaccineItem.active.where("lower(name) = ?", name).take
     end
 
-    def fetch_current_step
-      case
-      when context.booking.pending?
-        context.render_step = STEP0
-      when context.booking.patient_upserted?
-        context.render_step = STEP1
-      when context.booking.reserved?
-        context.render_step = STEP2
-      else
-        context.render_step = STEP0
-      end
+    def fetch_render_step
+      context.render_step = context._step.step_number
     end
   end
 end
