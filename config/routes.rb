@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :countries
     resources :cities
     resources :districts
+    resources :orders
   end
 
   root to: "main#index"

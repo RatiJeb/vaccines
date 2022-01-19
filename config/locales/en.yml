@@ -146,6 +146,16 @@ en:
         name: 'Name'
         code: 'Code'
         active: 'Active'
+    orders:
+      list:
+        header: 'Orders'
+        bu_duration: 'Duration'
+        patient: 'Patient'
+        code: 'Code'
+        date: 'Date'
+        finished: 'Is Finished'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
 
   web:
     main:

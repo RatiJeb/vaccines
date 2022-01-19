@@ -43,6 +43,12 @@
       %>
     </div>
 
+    <div class="col">
+      <button type="button" data-action="click->slots#fetchSlots" class='btn btn-success' data-slots-target='refresh' disabled>
+        refresh
+      </button>
+    </div>
+
     <div class=row data-slots-target="slots"></div>
   </div>
 <% end %>

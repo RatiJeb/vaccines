@@ -1,6 +1,5 @@
 class SlotsController < ApplicationController
   def index
-    
     @bu_unit = BusinessUnit.find(params[:business_unit_id])
     slots =
       BusinessUnitSlot

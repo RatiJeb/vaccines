@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 import Rails from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = [ "country", "city", "district", "bu_unit", "slots" ]
+  static targets = [ "country", "city", "district", "bu_unit", "slots", "refresh" ]
 
   connect() {
     console.log("Hi");
@@ -47,7 +47,8 @@ export default class extends Controller {
       url: "/slots/",
       data: "business_unit_id=" + this.bu_unitTarget.value,
       success: (data) => {
-          this.slotsTarget.innerHTML = data.body.innerHTML
+          this.slotsTarget.innerHTML = data.body.innerHTML;
+          this.refreshTarget.disabled = false;
       }
   });
   }
