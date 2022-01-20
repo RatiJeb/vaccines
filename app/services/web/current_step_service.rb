@@ -34,10 +34,8 @@ module Web
       end
     end
     
-    def prepare_current_step
-      # TODO: refactor ond step2
-      
-      context.record = context.booking&.patient || Patient.new
+    def prepare_current_step      
+      context.record = context._step.record
       
       context.current_vaccine = context.booking&.vaccine || context.selected_vaccine
     end
