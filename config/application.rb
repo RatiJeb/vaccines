@@ -18,6 +18,7 @@ module VacBookingSystem
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.eager_load_paths << Rails.root.join("app/services")
+    config.eager_load_paths << Rails.root.join('app/services')
+    config.eager_load_paths << Rails.root.join('app/presenters')
   end
 end

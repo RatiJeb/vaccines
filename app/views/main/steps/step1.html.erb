@@ -66,7 +66,6 @@
     <br />
 
     <div class="row">
-      <% #binding.pry %>
       <%= simple_form_for @record, method: :post, url: next_step_path do |f| %>
         <%= f.input :order_date, as: :hidden %>
         <%= f.input :business_unit_slot_id, as: :hidden %>

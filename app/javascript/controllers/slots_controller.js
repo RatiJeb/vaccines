@@ -47,6 +47,7 @@ export default class extends Controller {
       url: "/slots/",
       data: "business_unit_id=" + this.bu_unitTarget.value,
       success: (data) => {
+          debugger
           this.slotsTarget.innerHTML = data.body.innerHTML;
           this.refreshTarget.disabled = false;
       }
