@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h1><%= I18n.t('admin.sms.header') %></h1>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><%= I18n.t('admin.sms.name') %></th>
+              <th><%= I18n.t('admin.sms.content') %></th>
+              <th><%= I18n.t('admin.sms.patient_phone_number') %></th>
+              <th><%= I18n.t('admin.sms.order_code') %></th>
+              <th><%= I18n.t('admin.sms.sent_at') %></th>
+              <th><%= I18n.t('admin.sms.created_at') %></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @sms.each do |message| %>
+              <tr>
+                <td class="align-middle"><%= message.title %></span></td>
+                <td class="align-middle"><%= message.message %></td>
+                <td class="align-middle"><%= message.booking.patient.mobile_phone %></td>
+                <td class="align-middle"><%= message.code %></td>
+                <td class="align-middle"><%= message.sent_at&.strftime('%F') %></td>
+                <td class="align-middle"><%= message.created_at&.strftime('%F') %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <%== pagy_bootstrap_nav(@pagy)%>
+      </div>
+    </div>
+  </div>
+</div>

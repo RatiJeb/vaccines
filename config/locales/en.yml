@@ -156,7 +156,14 @@ en:
         finished: 'Is Finished'
         created_at: 'Created at'
         updated_at: 'Updated at'
-
+    sms:
+      header: 'SMS'
+      name: 'Title'
+      content: 'Content'
+      patient_phone_number: 'Patient Phone Number'
+      order_code: 'Order Code'
+      sent_at: 'Sent At'
+      created_at: 'Created At'
   web:
     main:
       header: 'Online Booking'

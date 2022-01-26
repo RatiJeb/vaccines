@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :cities
     resources :districts
     resources :orders
+    resources :sms_messages, only: [:index]
   end
 
   root to: "main#index"
