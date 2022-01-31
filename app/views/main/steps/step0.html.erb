@@ -15,7 +15,7 @@
           <%= f.input :mobile_phone %>
           <%= f.input :email %>
           <div>
-            <%= button_to '< Prev', prev_step_path, type: "button", method: :post, class: 'btn btn-outline-dark'  %>
+            <%= link_to '< Prev', prev_step_path, type: "button", method: :post, class: 'btn btn-outline-dark'  %>
             <%= f.submit I18n.t('web.main.step0_submit', class: 'btn btn-success'), class: 'btn btn-outline-success'%>
           </div>
         <% end %>
