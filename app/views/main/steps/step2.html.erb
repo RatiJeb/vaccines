@@ -9,7 +9,7 @@
 
 <div class="card">
   <div class="card-header">
-    <h2>Confirmation - <%= @current_vaccine.name %></h2>
+    <h2>Confirmation - <%= @current_vaccine&.name %></h2>
   </div>
   <div class="card-body">
     <h3 class="card-text">
@@ -79,7 +79,7 @@
           <li class="breadcrumb-item"><%= link_to 'Home', root_url %></li>
           <li class="breadcrumb-item"><%= link_to 'Registration', '#' %></li>
           <li class="breadcrumb-item"><%= link_to 'Booking Slot', '#' %></li>
-          <li class="breadcrumb-item active" aria-current="page">Confirmation (<%= @current_vaccine.name %>)</li>
+          <li class="breadcrumb-item active" aria-current="page">Confirmation (<%= @current_vaccine&.name %>)</li>
         </ol>
       </nav>
     </small>
