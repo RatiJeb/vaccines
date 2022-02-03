@@ -1,9 +1,10 @@
 class MainController < ApplicationController
   before_action :fetch_booking, only: %i[current_step next_step prev_step]
   before_action :clear_booking
+
   def index
     @vaccine_items = VaccineItem.active
-    @slots_count = Slots::SlotSqlService.new(nil).slots_main_count
+    @slots_count = Slots::SlotSqlService.new(BusinessUnitSlot.active).slots.length
   end      
 
   def current_step
@@ -45,11 +46,9 @@ class MainController < ApplicationController
     result = Web::PrevStepService.call(booking: @booking, params: params)
     
     if result.success?
-      if result.current_step == 0
-        clear_cookies
-      else
-        redirect_to current_step_path(result.booking.vaccine&.name&.downcase)
-      end
+      return clear_cookies if result.first_step?
+
+      redirect_to current_step_path(result.booking.vaccine&.name&.downcase)
     else
       assign_step_variables({ vaccine: result.booking.vaccine, record: result.record })
 

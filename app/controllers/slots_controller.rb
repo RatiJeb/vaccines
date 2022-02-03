@@ -5,7 +5,7 @@ class SlotsController < ApplicationController
   def index
     @bu_unit = BusinessUnit.find(params[:business_unit_id])
 
-    slots = Slots::SlotSqlService.new(@bu_unit).slots_step1_count
+    slots = Slots::SlotSqlService.new(@bu_unit.business_unit_slots.active).slots
 
     @bu_slots = slots.group_by { |r| [r.current_start_date, r.duration] }
   end

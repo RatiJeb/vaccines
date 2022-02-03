@@ -5,6 +5,7 @@ module Web
 
       before do
         context.current_step = 2
+        context.first_step = false
       end
 
       def call
