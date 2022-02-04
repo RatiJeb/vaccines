@@ -27,10 +27,14 @@ Rails.application.routes.draw do
   get 'slots/fetch_cities'
   get 'slots/fetch_districts'
   get 'slots/fetch_business_units'
+  get 'cancel_order/order_found'
+  post 'cancel_order/send_verification'
+  post 'cancel_order/verify_code'
+
   resources :slots, only: [:index]
+  resources :cancel_order, only: [:index]
 
   match 'booking/:vaccine', to: 'main#current_step', via: :get, as: :current_step
   match 'next_step', to: 'main#next_step', via: :post
   match 'prev_step', to: 'main#prev_step', via: :post
-
 end

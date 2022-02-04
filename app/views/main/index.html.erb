@@ -1,5 +1,15 @@
-<div class="row">
-  <h1><%= I18n.t('web.main.header') %></h1>
+<% if notice %>
+  <div class="row my-3">
+    <h4 id="notice" class="p-3 mb-2 bg-danger text-white"><%= notice %></h4>
+  </div>
+<% end %>
+<div class="navbar navbar-dark bg-dark">
+  <div class="row mx-1">
+    <h1 class="navbar-text"><%= I18n.t('web.main.header') %></h1>
+  </div>
+  <div class="row mx-2">
+    <%= button_to I18n.t('web.main.cancel'), cancel_order_index_url, method: :get, class: "btn btn-warning" %>
+  </div>
 </div>
 <br />
 <div class="row">

@@ -29,6 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
+
 en:
   admin:
     users:
@@ -167,6 +168,7 @@ en:
   web:
     main:
       header: 'Online Booking'
+      cancel: 'Cancel Booking Order'
       seats: "Seats: %{quantity}"
       register_text: 'Register'
       step0_submit: 'Next'
@@ -182,3 +184,18 @@ en:
         order_date: 'Order Date'
         vaccine: 'Vaccine'
         slot_already_reserved: 'This slot already reserved'
+    cancel_reservation:
+      header: 'Cancel Order'
+      order_code: 'Order Code:'
+      mobile_phone: 'Mobile Phone:'
+      find: 'Find'
+      errors: 'Something went wrong, please try again'
+      order:
+        header: 'Order Info'
+        bu_name: 'Business Unit'
+        bu_address: 'Address'
+        date: 'Order Date'
+        cancel: 'Cancel Order'
+        verify_code: 'Verification Code:'
+        cancel_button: 'Cancel Reservation'
+        notice: 'Reservation is successfully Canceled!'

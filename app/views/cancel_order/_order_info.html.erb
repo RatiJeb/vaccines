@@ -1,0 +1,38 @@
+<br />
+<h1><%= I18n.t('web.cancel_reservation.order.header') %></h1>
+<br />
+
+<div class="card h-100" data-controller="cancel">
+  <table class="m-5">
+    <tr>
+      <th><%= I18n.t('web.cancel_reservation.order.bu_name') %></th>
+      <th><%= I18n.t('web.cancel_reservation.order.bu_address') %></th>
+      <th><%= I18n.t('web.cancel_reservation.order.date') %></th>
+    </tr>
+    <tr>
+      <td><%= @current_order.business_unit_slot.business_unit.name %></td>
+      <td>
+        <%= "#{@current_order.business_unit_slot.business_unit.country.name}," %>
+        <%= "#{@current_order.business_unit_slot.business_unit.city.name}," %>
+        <%= @current_order.business_unit_slot.business_unit.district.name %>
+      </td>
+      <td><%= @current_order.order_date %></td>
+      <td>
+        <var data-cancel-target="current_order" hidden><%= @current_order.id %></var>
+        <button type="button" data-action="click->cancel#acceptButton" class='btn btn-success'>
+          <%= I18n.t('web.cancel_reservation.order.cancel') %>
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div class="col m-5" data-cancel-target='verify_form' hidden>
+    <%= form_with url: false do |f| %>
+      <%= f.label :verifymsg_code, I18n.t('web.cancel_reservation.order.verify_code'), class: 'w-25' %>
+      <%= f.text_field :verifymsg_code, class: 'w-50', data: { cancel_target: 'verifymsg_code' }  %>
+    <%end%>
+    <div class="text-center mt-5">
+      <button class='btn btn-warning' data-action="click->cancel#verifyMessage"><%= I18n.t('web.cancel_reservation.order.cancel_button') %></button>
+    </div>
+  </div>
+  <div data-cancel-target="errors" class="mx-auto mb-3"></div>
+</div>
